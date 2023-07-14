@@ -27,9 +27,9 @@ var GeraCPF = /*#__PURE__*/function () {
   _createClass(GeraCPF, [{
     key: "rand",
     value: function rand() {
-      var min = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 100000000;
+      var min = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 10000000;
       var max = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 999999999;
-      return String(Math.floor(math.random() * (max - min) + min));
+      return String(Math.floor(Math.random() * (max - min) + min));
     }
   }, {
     key: "geraNovoCPF",
@@ -735,7 +735,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_css_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/css/style.css */ "./src/assets/css/style.css");
 
 
-(function () {})();
+(function () {
+  var gera = new _modules_GeraCPF__WEBPACK_IMPORTED_MODULE_0__["default"]();
+  var cpfGerado = document.querySelector('.cpf-gerado');
+  cpfGerado.innerHTML = gera.geraNovoCPF();
+})();
 })();
 
 /******/ })()
